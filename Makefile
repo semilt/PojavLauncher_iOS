@@ -51,7 +51,8 @@ OSVER       := $(shell sw_vers -productVersion | cut -b 1-2)
 ifeq ($(shell sw_vers -productName),macOS)
 IOS         := 0
 SDKPATH     ?= $(shell xcrun --sdk iphoneos --show-sdk-path)
-BOOTJDK     ?= $(shell /usr/libexec/java_home -v 1.8)/bin
+#BOOTJDK     ?= $(shell /usr/libexec/java_home -v 1.8)/bin
+BOOTJDK		?= "/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/bin"
 $(warning Building on macOS.)
 else
 IOS         := 1
@@ -349,6 +350,7 @@ payload: native java jre assets
 
 deploy:
 	echo '[PojavLauncher v$(VERSION)] deploy - start'
+	echo 'IOS: $(IOS), Platform: $(PLATFORM)'
 	cd $(OUTPUTDIR); \
 	if [ '$(IOS)' = '1' ]; then \
 		ldid -S $(WORKINGDIR)/PojavLauncher.app || exit 1; \

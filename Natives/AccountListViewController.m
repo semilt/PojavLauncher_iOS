@@ -148,6 +148,13 @@
         [self actionLoginLocal:sender];
     }];
     [picker addAction:actionLocal];
+    
+    // Little Skin Login
+    UIAlertAction *actionLittleSkin = [UIAlertAction actionWithTitle:localize(@"login.option.littleskin", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self actionLoginLocal:sender];
+    }];
+    [picker addAction:actionLittleSkin];
+    
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:localize(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil];
     [picker addAction:cancel];
 

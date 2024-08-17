@@ -86,6 +86,7 @@
 "login.option.demo" = "演示账户";
 "login.option.microsoft" = "微软账户";
 "login.option.local" = "本地账户";
+"login.option.littleskin" = "LittleSkin账户(伪)";
 
 "login.warn.title.legacy_device" = "PojavLauncher 的下一个版本将与此设备不兼容。";
 "login.warn.message.legacy_device" = "运行下一个主要版本，需要一台能够运行 iOS 14 的设备。";
